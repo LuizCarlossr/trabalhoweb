@@ -1,0 +1,26 @@
+<h1>Contatos</h1>
+<hr>
+
+<a href="/formContato">Incluir</a>
+
+<table>
+    <tr>
+        <td>Id</td>
+        <td>Nome</td>
+        <td>E-mail</td>
+
+    </tr>
+    <% contato.forEach(function(item){ %>
+    <tr>
+        <td><%= item.id %></td>
+        <td><%= item.nome %></td>
+        <td><%= item.email %></td>
+        <td>
+            <a href="/atualizarContato?id=<%= item.id %>">Atualizar</a>
+        </td>
+        <td>
+            <a href="/excluirContato?id=<%= item.id %>" onClick="return confirm('Confirma a exclusão?')">Excluir</a>
+        </td>
+    </tr>
+    <% }) %>
+</table>
